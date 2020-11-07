@@ -33853,7 +33853,7 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/FormInput.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33862,20 +33862,173 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Header() {
+  return /*#__PURE__*/_react.default.createElement("h1", null, "#Todo");
+}
+
+var _default = Header;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"components/useToggler.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function UseToggler() {
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      todo = _useState2[0],
+      setTodo = _useState2[1];
+
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      todos = _useState4[0],
+      setTodos = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      isChecked = _useState6[0],
+      setIsChecked = _useState6[1];
+
+  function handleChecked() {
+    setIsChecked(!isChecked);
+  }
+
+  var handleChange = function handleChange(e) {
+    setTodo(e.target.value);
+  };
+
+  var addTodo = function addTodo() {
+    setTodos([].concat(_toConsumableArray(todos), [{
+      id: todos.length + 1,
+      text: todo,
+      completed: false
+    }]));
+  };
+
+  var onSubmit = function onSubmit(e) {
+    e.preventDefault();
+    if (todo === "") return;
+    addTodo();
+    setTodo("");
+  };
+
+  var removeTodo = function removeTodo(todoId) {
+    var updatedTodos = todos.filter(function (todo) {
+      return todo.id !== todoId;
+    });
+    setTodos(updatedTodos);
+  };
+
+  var toggleTodo = function toggleTodo(todoId) {
+    var updatedTodos = todos.map(function (todo) {
+      return todo.id === todoId ? _objectSpread(_objectSpread({}, todo), {}, {
+        completed: !todo.completed
+      }) : todo;
+    });
+    setTodos(updatedTodos);
+  };
+
+  return {
+    todo: todo,
+    todos: todos,
+    isChecked: isChecked,
+    handleChecked: handleChecked,
+    handleChange: handleChange,
+    addTodo: addTodo,
+    onSubmit: onSubmit,
+    toggleTodo: toggleTodo
+  };
+}
+
+var _default = UseToggler;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"components/FormInput.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _useToggler = _interopRequireDefault(require("./useToggler"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function FormInput() {
-  return /*#__PURE__*/_react.default.createElement("di", null, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    value: "text",
-    onChange: ""
-  }), /*#__PURE__*/_react.default.createElement("button", null, "Add")));
+  var _UseToggler = (0, _useToggler.default)(),
+      todo = _UseToggler.todo,
+      todos = _UseToggler.todos,
+      isChecked = _UseToggler.isChecked,
+      handleChecked = _UseToggler.handleChecked,
+      handleChange = _UseToggler.handleChange,
+      addTodo = _UseToggler.addTodo,
+      onSubmit = _UseToggler.onSubmit,
+      toggleTodo = _UseToggler.toggleTodo;
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: onSubmit
+  }, /*#__PURE__*/_react.default.createElement("input", {
+    id: "todo",
+    className: "todo-input",
+    onChange: handleChange,
+    value: todo
+  }), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    className: "add-btn"
+  }, "Add")), /*#__PURE__*/_react.default.createElement("div", null, todos.map(function (todo) {
+    return /*#__PURE__*/_react.default.createElement("fieldset", null, /*#__PURE__*/_react.default.createElement("input", {
+      type: "checkbox",
+      key: todo.id,
+      onChange: handleChecked
+    }), isChecked ? /*#__PURE__*/_react.default.createElement("s", null, /*#__PURE__*/_react.default.createElement("label", null, todo.text)) : /*#__PURE__*/_react.default.createElement("label", null, todo.text));
+  })));
 }
 
 var _default = FormInput;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./useToggler":"components/useToggler.js"}],"components/All.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33885,17 +34038,72 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _FormInput = _interopRequireDefault(require("./components/FormInput"));
+var _useToggler = _interopRequireDefault(require("./useToggler"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function All() {
+  var _UseToggler = (0, _useToggler.default)(),
+      todo = _UseToggler.todo,
+      todos = _UseToggler.todos,
+      handleChange = _UseToggler.handleChange,
+      addTodo = _UseToggler.addTodo,
+      onSubmit = _UseToggler.onSubmit,
+      toggleTodo = _UseToggler.toggleTodo;
+
+  console.log(todos);
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hello"), todos.map(function (todo) {
+    return /*#__PURE__*/_react.default.createElement("fieldset", null, /*#__PURE__*/_react.default.createElement("input", {
+      type: "checkbox",
+      key: todo.id
+    }), /*#__PURE__*/_react.default.createElement("label", null, todo.text));
+  }));
+}
+
+var _default = All;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./useToggler":"components/useToggler.js"}],"App.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Header = _interopRequireDefault(require("./components/Header"));
+
+var _FormInput = _interopRequireDefault(require("./components/FormInput"));
+
+var _All = _interopRequireDefault(require("./components/All"));
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+console.log(_All.default);
+
 function App() {
-  return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("h1", null, "To do"), /*#__PURE__*/_react.default.createElement(_FormInput.default, null));
+  return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, "All"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/active"
+  }, "Active"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/completed"
+  }, "Completed"))), /*#__PURE__*/_react.default.createElement(_FormInput.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/"
+  }, /*#__PURE__*/_react.default.createElement(_All.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/active"
+  }, /*#__PURE__*/_react.default.createElement(_All.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/completed"
+  }, /*#__PURE__*/_react.default.createElement(_All.default, null))));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./components/FormInput":"components/FormInput.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./components/Header":"components/Header.js","./components/FormInput":"components/FormInput.js","./components/All":"components/All.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -33937,7 +34145,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52202" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59665" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
