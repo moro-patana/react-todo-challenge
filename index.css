@@ -30,3 +30,6 @@ a {
     fieldset {
         border: none;
     }
+    [type="checkbox"]:checked ~ label {
+        text-decoration: line-through;
+    }
