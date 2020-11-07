@@ -6,9 +6,11 @@ function UseToggler() {
     function handleChecked() {
         setIsChecked(!isChecked)
     }
+
+    // smbimt
   
     const handleChange = e => {
-      setTodo(e.target.value);
+    //   setTodo(e.target.value);
     };
     const addTodo = () => {
       setTodos([
@@ -23,9 +25,18 @@ function UseToggler() {
   
     const onSubmit = e => {
       e.preventDefault();
-      if (todo === "") return;
-      addTodo();
-      setTodo("");
+      if (todos === "") return;
+    //   addTodo();
+    //   setTodo("");
+    setTodos([
+        ...todos,
+        {
+          id: todos.length + 1,
+          text: e.target.todo.value,
+          completed: false
+        }
+      ]);
+      e.target.reset()
     };
   
     const removeTodo = todoId => {

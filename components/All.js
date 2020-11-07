@@ -1,9 +1,9 @@
 import React from "react"
 import UseToggler from "./useToggler"
-function All() {
-    const {todo, todos, handleChange, addTodo, onSubmit, toggleTodo} = UseToggler()
+    function All({todos}) {
+    // const {todo, todos, handleChange, addTodo, onSubmit, toggleTodo} = UseToggler()
     console.log(todos);
-    
+    if (!todos) return null
     return (
         <div>
             <h1>Hello</h1>

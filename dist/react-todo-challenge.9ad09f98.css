@@ -30,5 +30,8 @@ a {
     fieldset {
         border: none;
     }
+    [type="checkbox"]:checked ~ label {
+        text-decoration: line-through;
+    }
 
 /*# sourceMappingURL=/react-todo-challenge.9ad09f98.css.map */

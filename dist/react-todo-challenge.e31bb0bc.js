@@ -33929,10 +33929,10 @@ function UseToggler() {
 
   function handleChecked() {
     setIsChecked(!isChecked);
-  }
+  } // smbimt
 
-  var handleChange = function handleChange(e) {
-    setTodo(e.target.value);
+
+  var handleChange = function handleChange(e) {//   setTodo(e.target.value);
   };
 
   var addTodo = function addTodo() {
@@ -33945,9 +33945,15 @@ function UseToggler() {
 
   var onSubmit = function onSubmit(e) {
     e.preventDefault();
-    if (todo === "") return;
-    addTodo();
-    setTodo("");
+    if (todos === "") return; //   addTodo();
+    //   setTodo("");
+
+    setTodos([].concat(_toConsumableArray(todos), [{
+      id: todos.length + 1,
+      text: e.target.todo.value,
+      completed: false
+    }]));
+    e.target.reset();
   };
 
   var removeTodo = function removeTodo(todoId) {
@@ -33980,7 +33986,7 @@ function UseToggler() {
 
 var _default = UseToggler;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"components/FormInput.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"components/All.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33991,6 +33997,37 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _useToggler = _interopRequireDefault(require("./useToggler"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function All(_ref) {
+  var todos = _ref.todos;
+  // const {todo, todos, handleChange, addTodo, onSubmit, toggleTodo} = UseToggler()
+  console.log(todos);
+  if (!todos) return null;
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hello"), todos.map(function (todo) {
+    return /*#__PURE__*/_react.default.createElement("fieldset", null, /*#__PURE__*/_react.default.createElement("input", {
+      type: "checkbox",
+      key: todo.id
+    }), /*#__PURE__*/_react.default.createElement("label", null, todo.text));
+  }));
+}
+
+var _default = All;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./useToggler":"components/useToggler.js"}],"components/FormInput.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _useToggler = _interopRequireDefault(require("./useToggler"));
+
+var _All = _interopRequireDefault(require("./All"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34005,6 +34042,7 @@ function FormInput() {
       onSubmit = _UseToggler.onSubmit,
       toggleTodo = _UseToggler.toggleTodo;
 
+  console.log(todos);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
   }, /*#__PURE__*/_react.default.createElement("form", {
@@ -34012,57 +34050,23 @@ function FormInput() {
   }, /*#__PURE__*/_react.default.createElement("input", {
     id: "todo",
     className: "todo-input",
-    onChange: handleChange,
-    value: todo
+    name: "todo" //   onChange={handleChange}
+    //   value={todo}
+
   }), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     className: "add-btn"
-  }, "Add")), /*#__PURE__*/_react.default.createElement("div", null, todos.map(function (todo) {
+  }, "Add")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hello"), todos.map(function (todo) {
     return /*#__PURE__*/_react.default.createElement("fieldset", null, /*#__PURE__*/_react.default.createElement("input", {
       type: "checkbox",
-      key: todo.id,
-      onChange: handleChecked
-    }), isChecked ? /*#__PURE__*/_react.default.createElement("s", null, /*#__PURE__*/_react.default.createElement("label", null, todo.text)) : /*#__PURE__*/_react.default.createElement("label", null, todo.text));
+      key: todo.id
+    }), /*#__PURE__*/_react.default.createElement("label", null, todo.text));
   })));
 }
 
 var _default = FormInput;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./useToggler":"components/useToggler.js"}],"components/All.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _useToggler = _interopRequireDefault(require("./useToggler"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function All() {
-  var _UseToggler = (0, _useToggler.default)(),
-      todo = _UseToggler.todo,
-      todos = _UseToggler.todos,
-      handleChange = _UseToggler.handleChange,
-      addTodo = _UseToggler.addTodo,
-      onSubmit = _UseToggler.onSubmit,
-      toggleTodo = _UseToggler.toggleTodo;
-
-  console.log(todos);
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hello"), todos.map(function (todo) {
-    return /*#__PURE__*/_react.default.createElement("fieldset", null, /*#__PURE__*/_react.default.createElement("input", {
-      type: "checkbox",
-      key: todo.id
-    }), /*#__PURE__*/_react.default.createElement("label", null, todo.text));
-  }));
-}
-
-var _default = All;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","./useToggler":"components/useToggler.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./useToggler":"components/useToggler.js","./All":"components/All.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34091,14 +34095,7 @@ function App() {
     to: "/active"
   }, "Active"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/completed"
-  }, "Completed"))), /*#__PURE__*/_react.default.createElement(_FormInput.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    exact: true,
-    path: "/"
-  }, /*#__PURE__*/_react.default.createElement(_All.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/active"
-  }, /*#__PURE__*/_react.default.createElement(_All.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/completed"
-  }, /*#__PURE__*/_react.default.createElement(_All.default, null))));
+  }, "Completed"))), /*#__PURE__*/_react.default.createElement(_FormInput.default, null), /*#__PURE__*/_react.default.createElement(_All.default, null));
 }
 
 var _default = App;
