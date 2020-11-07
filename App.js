@@ -18,7 +18,8 @@ function App() {
             </nav>
 
             <FormInput/>
-            <Switch>
+            <All/>
+            {/* <Switch>
                 <Route exact path="/">
                   <All/>
                 </Route>
@@ -29,7 +30,7 @@ function App() {
                   <All/>
                 </Route>
 
-            </Switch>
+            </Switch> */}
         </main>
     )
 }
