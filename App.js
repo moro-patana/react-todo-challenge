@@ -19,7 +19,7 @@ function App() {
 
             <FormInput/>
             <All/>
-            {/* <Switch>
+            <Switch>
                 <Route exact path="/">
                   <All/>
                 </Route>
@@ -30,7 +30,7 @@ function App() {
                   <All/>
                 </Route>
 
-            </Switch> */}
+            </Switch>
         </main>
     )
 }

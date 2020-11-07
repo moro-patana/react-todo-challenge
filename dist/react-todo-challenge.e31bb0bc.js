@@ -34009,7 +34009,7 @@ function All(_ref) {
     return /*#__PURE__*/_react.default.createElement("fieldset", null, /*#__PURE__*/_react.default.createElement("input", {
       type: "checkbox",
       key: todo.id
-    }), /*#__PURE__*/_react.default.createElement("label", null, todo.text));
+    }), /*#__PURE__*/_react.default.createElement("p", null, todo.todo), /*#__PURE__*/_react.default.createElement("label", null, todo.text));
   }));
 }
 
@@ -34095,7 +34095,14 @@ function App() {
     to: "/active"
   }, "Active"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/completed"
-  }, "Completed"))), /*#__PURE__*/_react.default.createElement(_FormInput.default, null), /*#__PURE__*/_react.default.createElement(_All.default, null));
+  }, "Completed"))), /*#__PURE__*/_react.default.createElement(_FormInput.default, null), /*#__PURE__*/_react.default.createElement(_All.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/"
+  }, /*#__PURE__*/_react.default.createElement(_All.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/active"
+  }, /*#__PURE__*/_react.default.createElement(_All.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/completed"
+  }, /*#__PURE__*/_react.default.createElement(_All.default, null))));
 }
 
 var _default = App;

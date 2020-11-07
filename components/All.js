@@ -6,22 +6,24 @@ import UseToggler from "./useToggler"
     if (!todos) return null
     return (
         <div>
-            <h1>Hello</h1>
-            {todos.map(todo => (
-            <fieldset>
-                <input type="checkbox" key={todo.id}/>
-                    <label
-                    // className={todo.completed ? "todo-completed" : undefined}
-                    // onClick={() => toggleTodo(todo.id)}
-                    >
-                    {todo.text}
-                    </label>
-                    {/* <span className="delete-btn" onClick={() => removeTodo(todo.id)}>
-                    x
-                    </span> */}
-            </fieldset>
-            ))}
-    </div>
+        <h1>Hello</h1>
+        {todos.map(todo => (
+        <fieldset>
+            <input type="checkbox" key={todo.id}/>
+            <p>{todo.todo}</p>
+                <label
+                // className={todo.completed ? "todo-completed" : undefined}
+                // onClick={() => toggleTodo(todo.id)}
+                >
+                {todo.text}
+                </label>
+                {/* <span className="delete-btn" onClick={() => removeTodo(todo.id)}>
+                x
+                </span> */}
+        </fieldset>
+        ))}
+</div>
+
     )
 }
 export default All;

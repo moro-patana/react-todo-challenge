@@ -21,7 +21,7 @@ function FormInput() {
         </button>
       </form>
       <div>
-            <h1>Hello</h1>
+        <h1>Hello</h1>
             {todos.map(todo => (
             <fieldset>
                 <input type="checkbox" key={todo.id}/>
